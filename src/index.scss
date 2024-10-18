@@ -78,7 +78,7 @@ body{
           flex: 1;
           overflow: auto;
           margin-bottom: 40px;
-          
+
           .cartItem{
             display: flex;
             justify-content: space-between;
@@ -189,8 +189,8 @@ body{
         justify-content: space-between;
         align-items: center;
         
-        .li1{
-          margin-right: 30px;
+        .li1, .li2{
+          margin-right: 20px;
 
           img{
             margin-right: 10px;

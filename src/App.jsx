@@ -2,7 +2,7 @@ function App() {
   return (
     <div className="wrapper">
 
-      <div className="overlay">
+      <div style={{display: "none"}} className="overlay">
         <div className="drawer">
           <div className="cartHeadingAndClose">
             <h1>Cart</h1>
@@ -85,6 +85,9 @@ function App() {
           <li className="li1">
             <img width={18} height={18} src="/img/cart_icon.svg" alt="Cart" />
             <span>1205 azn</span>
+          </li>
+          <li className="li2">
+            <img width={18} height={18} src="/img/heart_unliked_icon.svg" alt="Heart" />
           </li>
           <li>
             <img width={18} height={18} src="/img/user_icon.svg" alt="User" />
