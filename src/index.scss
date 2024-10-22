@@ -1,6 +1,6 @@
 
 *{
-  font-family: "Montserrat";
+  font-family: "Montserrat", system-ui;
 }
 
 body{
@@ -216,10 +216,9 @@ body{
         }
 
         .searchBar{
-          border: 1px solid rgba(0, 0, 0, 0.277);
-          padding: 10px;
-          width: 200px;
-          height: 10px;
+          border: 1px solid #f3f3f3;
+          border-radius: 10px;
+          padding: 0 15px;
           display: flex;
           align-items: center;
           img{
@@ -227,11 +226,14 @@ body{
           }
           input{
             border: none;
+            padding: 13px;
+            font-size: 16px;
+            width: 200px;
           }
         }
       }
 
-      .cards{
+      .productCards{
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
