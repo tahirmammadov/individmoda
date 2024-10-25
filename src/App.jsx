@@ -6,6 +6,8 @@ import ProductCard from './components/ProductCard';
 
 function App() {
   const [catalogItems, setCatalogItems] = useState([]);
+  const [cartDrawerState, setCartDrawerState] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
     fetch('https://faux-api.com/api/v1/catalog_03883873690984574')
@@ -20,23 +22,24 @@ function App() {
       .catch((error) => {console.error('Fetch error: ', error)});
   }, []);
   
-
   return (
     <div className="wrapper">
 
-      <CartDrawer />
+      {cartDrawerState&&<CartDrawer closeCartDrawer = {() => {setCartDrawerState(false)}}/>}
 
-      <Header />
+      <Header openCartDrawer = {() => {setCartDrawerState(true)}}/>
 
       <div className="content">
-
         <div className="headingAndSearch">
           <h1>All clothes</h1>
-          <SearchBar />
+          <SearchBar getSearchValue = {(value) => setSearchValue(value)}/>
         </div>
 
         <div className="productCards">
-          {catalogItems.map((item) => {
+          {catalogItems
+          .filter((item) => {
+            return item.title.includes(searchValue)})
+          .map((item) => {
             return(
             <ProductCard
             key={item.id}
@@ -47,7 +50,6 @@ function App() {
           )
         })}
         </div>
-
       </div>
 
     </div>

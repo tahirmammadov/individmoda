@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
+import {useState} from 'react';
 
 function ProductCard({ title, price, imageUrl }) {
+
+  const [addToCardButtonState, setAddToCardButtonState] = useState(false);
+
   return (
     <div className="card">
       <button className="heart_icon_dev">
@@ -13,8 +17,8 @@ function ProductCard({ title, price, imageUrl }) {
           <span>Price</span>
           <b>{price} azn</b>
         </div>
-        <button className="plus_icon_dev">
-          <img width={11} height={11} src="/img/icons/plus.svg" alt="Plus" />
+        <button className="plus_icon_dev" onClick={() => {setAddToCardButtonState(!addToCardButtonState)}}>
+          <img width={11} height={11} src={addToCardButtonState?"/img/icons/check.svg":"/img/icons/plus.svg"} alt="Plus" />
         </button>
       </div>
     </div>

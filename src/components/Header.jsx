@@ -1,4 +1,5 @@
-function Header(){
+import PropTypes from "prop-types"
+function Header({openCartDrawer}){
   return(
     <header>
         <div className="headerLeft">
@@ -9,7 +10,7 @@ function Header(){
           </div>
         </div>
         <ul className="headerRight">
-          <li className="li1">
+          <li className="li1" onClick = {openCartDrawer}>
             <img width={18} height={18} src="/img/icons/cart.svg" alt="Cart" />
             <span>1205 azn</span>
           </li>
@@ -22,6 +23,10 @@ function Header(){
         </ul>
       </header>
   )
+}
+
+Header.propTypes = {
+  openCartDrawer: PropTypes.func.isRequired
 }
 
 export default Header;

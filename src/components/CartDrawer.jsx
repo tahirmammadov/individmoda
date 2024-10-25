@@ -1,10 +1,11 @@
-function CartDrawer(){
+import PropTypes from "prop-types"
+function CartDrawer({closeCartDrawer}){
   return(
-    <div style={{display: "none"}} className="overlay">
+    <div className="overlay">
         <div className="drawer">
           <div className="cartHeadingAndClose">
             <h1>Cart</h1>
-            <button className="cartCloseButton">
+            <button className="cartCloseButton" onClick={closeCartDrawer}>
               <img width={18} height={18} src="/img/icons/close.svg" alt="CloseButton" />
             </button>
           </div>
@@ -71,6 +72,10 @@ function CartDrawer(){
         </div>
       </div>
   )
+}
+
+CartDrawer.propTypes = {
+  closeCartDrawer: PropTypes.func.isRequired
 }
 
 export default CartDrawer;
